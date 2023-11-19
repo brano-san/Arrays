@@ -98,15 +98,15 @@ fun ex3(){
 }
 
 fun ex4(){
-    val array1 = intArrayOf(1, 2, 3, 2, 0)
-    val array2 = intArrayOf(5, 1, 2, 7, 3, 2, 2)
+    val array1 = listOf(1, 2, 3, 2, 0)
+    val array2 = listOf(5, 1, 2, 7, 3, 2, 2)
 
     val intersection = mutableListOf<Int>()
 
     for (element in array1) {
         if (element in array2) {
             intersection.add(element)
-            array2[array2.indexOf(element)] = Int.MIN_VALUE
+            array2.drop(array2.indexOf(element))
         }
     }
 
